@@ -1,0 +1,19 @@
+<span class="cpritBudget" ng-app="CurrentBudgetCalcApp" ng-controller="CurrentBudgetCalcCtrl">
+    <strong>Budget Details for current period:</strong>
+    <table>
+        <tr>
+            <td style="padding: 8px;"><strong><span style="color: #f00;">* </span> Direct: </strong></td>
+            <td style="padding: 8px;"><input ng-model="currentPeriod.direct" type="number" placeholder='Direct budget ...'/></td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;"><strong><span style="color: red;">*</span> Indirect: </strong></td>
+            <td style="padding: 8px;"><input ng-model="currentPeriod.indirect" type="number" placeholder='Indirect budget ...'/></td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;"><strong>&nbsp;&nbsp;&nbsp;Total: </strong></td>
+            <td style="padding: 8px;">{{currentPeriodTotal() | currency}}</td>
+        </tr>
+    </table>
+    <input  id="currentPeriodBudgetData" value="{{currentPeriod}}" name="currentPeriodBudgetData" style="display: none;" />
+</span>
+

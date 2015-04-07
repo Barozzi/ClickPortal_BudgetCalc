@@ -1,0 +1,24 @@
+<strong>Current Year's Subaward:</strong>
+<table>
+    <tr>
+        <td style="padding: 8px;"><strong><span style="color: #f00;">* </span> Direct: </strong></td>
+        <td style="padding: 8px;"><input id="cpritPeriodDirect" ng-model="cpritPeriod.direct" type="number" placeholder='Direct budget ...'/></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;"><strong><span style="color: red;">*</span> Indirect: </strong></td>
+        <td style="padding: 8px;"><input id="cpritPeriodIndirect"ng-model="cpritPeriod.indirect" type="number" placeholder='Indirect budget ...'/></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;"><strong>&nbsp;&nbsp;&nbsp;Total: </strong></td>
+        <td style="padding: 8px;">{{cpritPeriodTotal() | currency}}</td>
+    </tr>
+</table>
+<input  id="cpritPeriodBudgetData" value="{{cpritPeriod}}" name="cpritPeriodBudgetData" style="display: none;" />
+<script>
+    jQuery(document).ready(function() {
+        if (CpritBudgetContext && CpritBudgetContext.readOnly) {
+            jQuery("#cpritPeriodDirect").attr("disabled", true);
+            jQuery("#cpritPeriodIndirect").attr("disabled", true);
+        }
+    });
+</script>
